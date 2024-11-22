@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Lista de Productos{% endblock %}
+
+{% block content %}
+<h1>Lista de Productos</h1>
+<div class="products">
+    {% for product in products %}
+    <div class="product">
+        <h2>{{ product.name }}</h2>
+        <p>Precio: ${{ product.precio }}</p>
+        <p>Local KW: {{ product.local_kw }}</p>
+        <img src="{{ product.imagen_url }}" alt="{{ product.name }}" style="max-width: 200px; max-height: 200px;">
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
